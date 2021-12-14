@@ -15,7 +15,6 @@ public abstract class BasePage {
     WebDriverWait wait;
 
 
-
     public BasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);

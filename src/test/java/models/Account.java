@@ -91,7 +91,7 @@ public class Account {
 
     public void setIndustry(String industry) {
         this.industry = industry;
-   }
+    }
 
     public String getEmployees() {
         return employees;

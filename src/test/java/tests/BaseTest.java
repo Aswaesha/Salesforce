@@ -36,9 +36,9 @@ public abstract class BaseTest {
         accountDetailsPage = new AccountDetailsPage(driver);
     }
 
-//    @AfterMethod(alwaysRun = true)
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
+    }
 
 }
