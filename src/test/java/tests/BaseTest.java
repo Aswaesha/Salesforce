@@ -7,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +17,9 @@ public abstract class BaseTest {
     LoginPage loginPage;
     HomePage homePage;
 
+    AccountListPage accountListPage;
+    AccountModalPage accountModalPage;
+    AccountDetailsPage accountDetailsPage;
 
     @BeforeMethod
     public void setUp() {
@@ -25,14 +27,18 @@ public abstract class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
+
+        accountListPage = new AccountListPage(driver);
+        accountModalPage = new AccountModalPage(driver);
+        accountDetailsPage = new AccountDetailsPage(driver);
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown() {
+//        driver.quit();
+//    }
 
 }
