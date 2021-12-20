@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import java.awt.*;
 
 public class AccountModalPage extends BasePage {
+
     public static final By MODAL_TITLE = By.xpath("//*[contains(@class, 'inlineTitle')]");
     public static final By CHECKBOX = By.xpath("//div[contains(@class,'modal-body')]//*[@type='checkbox']");
     public static final By CHEACH_DROPDOWN_PARENTACCOUNT = By.xpath("//div[contains(@class,'modal-body')]//div[@class='listContent']//ul//li//child::a[1]");

@@ -16,12 +16,14 @@ public abstract class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     HomePage homePage;
-
     AccountListPage accountListPage;
     AccountModalPage accountModalPage;
     AccountDetailsPage accountDetailsPage;
+    ContactListPage contactListPage;
+    ContactModalPage contactModalPage;
+    ContactDetailsPage contactDetailsPage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -30,10 +32,12 @@ public abstract class BaseTest {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-
         accountListPage = new AccountListPage(driver);
         accountModalPage = new AccountModalPage(driver);
         accountDetailsPage = new AccountDetailsPage(driver);
+        contactListPage = new ContactListPage(driver);
+        contactModalPage = new ContactModalPage(driver);
+        contactDetailsPage = new ContactDetailsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

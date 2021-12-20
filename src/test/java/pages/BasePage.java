@@ -11,6 +11,7 @@ public abstract class BasePage {
     public static final By NEW_BUTTON = By.xpath("//a[@href='javascript:void(0);']/div[@title='New']");
     public static final By SAVE_BUTTON = By.xpath("//button[@title='Save']");
 
+
     WebDriver driver;
     WebDriverWait wait;
 
