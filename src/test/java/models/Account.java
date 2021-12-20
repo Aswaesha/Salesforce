@@ -17,7 +17,6 @@ public class Account {
     String billingZip;
     String billingCountry;
 
-
     public Account(String accountName, String webSite, String type, String phone, String fax, String parentAccount, String industry, String employees, String annualRevenue, String description, String billingStreet, String billingCity, String billingState, String billingZip, String billingCountry) {
         this.accountName = accountName;
         this.webSite = webSite;
@@ -35,7 +34,6 @@ public class Account {
         this.billingZip = billingZip;
         this.billingCountry = billingCountry;
     }
-
 
     public String getAccountName() {
         return accountName;

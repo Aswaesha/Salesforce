@@ -12,11 +12,9 @@ public class ContactModalPage extends BasePage {
     public static final By CLICK_DROPDOWN_ACCOUNTNAME = By.xpath("//*[contains(@class,'modal-body')]//ul//li//lightning-base-combobox-item//span[@class='slds-media__body']//lightning-base-combobox-formatted-text");
     public static final By CLICK_DROPDOWN_REPORTSTO = By.xpath("//*[contains(@class,'modal-body')]//lightning-base-combobox-formatted-text[@title='Alex Alex']");
 
-
     public ContactModalPage(WebDriver driver) {
         super(driver);
     }
-
 
     @Override
     public boolean isPageOpen() {
@@ -62,9 +60,6 @@ public class ContactModalPage extends BasePage {
         return new ContactDetailsPage(driver);
     }
 
-    //    public void clickInputSalutation(){
-//        driver.findElement(CLICK_INPUT_SALUTATION).click();
-//    }
     public void clickCreateAccountName() {
         driver.findElement(CLICK_DROPDOWN_ACCOUNTNAME).click();
     }

@@ -11,13 +11,11 @@ public class Input {
     public Input(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
-
     }
 
     public void write(String text) {
         System.out.printf("Writing text '%s' input with label '%s'\n", text, this.label);
         driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
-
     }
 
 }

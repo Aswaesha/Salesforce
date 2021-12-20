@@ -19,6 +19,5 @@ public class TextAreaContacts {
     public void write(String text) {
         System.out.printf("Writing text '%s' TextArea with label '%s'\n", text, this.label);
         driver.findElement(By.xpath(String.format(textAreaLocator, this.label))).sendKeys(text);
-
     }
 }

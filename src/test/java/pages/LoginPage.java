@@ -24,7 +24,6 @@ public class LoginPage extends BasePage {
     public LoginPage open() {
         driver.get(BASE_URL);
         return this;
-
     }
 
     public HomePage login(String userName, String password) {
