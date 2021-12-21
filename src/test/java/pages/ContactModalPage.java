@@ -22,7 +22,7 @@ public class ContactModalPage extends BasePage {
     }
 
     public ContactDetailsPage create(Contact contact) {
-        new InputContacts(driver, "Salutation").selectOptionInpur(contact.getSalutation());
+        new InputContacts(driver, "Salutation").selectOptionInput(contact.getSalutation());
         new InputContacts(driver, "First Name").write(contact.getFirstName());
         new InputContacts(driver, "Last Name").write(contact.getLastName());
         new InputContacts(driver, "Account Name").writeSearch(contact.getAccountName());

@@ -26,7 +26,7 @@ public class InputContacts {
         driver.findElement(By.xpath(String.format(contactInputLocatorSearch, this.label))).sendKeys(text);
     }
 
-    public void selectOptionInpur(String option) {
+    public void selectOptionInput(String option) {
         System.out.printf("Writing text '%s' dropdown with label '%s'\n", option, this.label);
         System.out.printf(String.format(contactInputLocator, this.label) + "\n");
         System.out.printf(String.format(contactInputLocator, option) + "\n");
