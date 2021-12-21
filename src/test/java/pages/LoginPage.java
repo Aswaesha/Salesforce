@@ -24,15 +24,12 @@ public class LoginPage extends BasePage {
     public LoginPage open() {
         driver.get(BASE_URL);
         return this;
-
     }
 
     public HomePage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
-//        Actions action = new Actions(driver);
-//        action.click().sendKeys("").contextClick().clickAndHold().
         return new HomePage(driver);
     }
 }

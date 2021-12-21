@@ -21,7 +21,6 @@ public class AccountListPage extends BasePage {
         return this;
     }
 
-
     public AccountModalPage clickNew() {
         driver.findElement(NEW_BUTTON).click();
         return new AccountModalPage(driver);
