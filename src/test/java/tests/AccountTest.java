@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 @Log4j2
 public class AccountTest extends BaseTest {
 
-    @Test(description= "New account")
+    @Test(description = "New account")
     public void accountShouldBeCreated() {
         log.info("Старт теста Account test");
         loginPage

@@ -1,11 +1,12 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+@Log4j2
 public abstract class BasePage {
     public static final String BASE_URL = "https://alexandrabukh3.lightning.force.com";
     public static final By NEW_BUTTON = By.xpath("//a[@href='javascript:void(0);']/div[@title='New']");
@@ -26,7 +27,7 @@ public abstract class BasePage {
             return driver.findElement(locator).isDisplayed();
 
         } catch (NoSuchElementException ex) {
-            System.out.println(">>> !!!" + ex.getMessage());
+            log.error(">>> !!!" + ex.getMessage());
             return false;
         }
 

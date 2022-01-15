@@ -3,14 +3,14 @@ package pages;
 import elements.DropDown;
 import elements.Input;
 import elements.TextArea;
+import lombok.extern.log4j.Log4j2;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
+@Log4j2
 public class AccountModalPage extends BasePage {
 
     public static final By MODAL_TITLE = By.xpath("//*[contains(@class, 'inlineTitle')]");
@@ -23,8 +23,9 @@ public class AccountModalPage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
-        return isExist(MODAL_TITLE);
         log.info("Модатьное окно открыто");
+        return isExist(MODAL_TITLE);
+
     }
 
     public AccountDetailsPage create(Account account) {
@@ -46,12 +47,14 @@ public class AccountModalPage extends BasePage {
         new Input(driver, "Billing Country").write(account.getBillingCountry());
 
         clickCheckbox();
+        log.info("Аккаунт создан");
         return clickSave();
-        log.info("Аккаунт создан и нажата кноска Save");
+
     }
 
     public AccountDetailsPage clickSave() {
         driver.findElement(SAVE_BUTTON).click();
+        log.info("Нажата кнопка Save");
         return new AccountDetailsPage(driver);
     }
 

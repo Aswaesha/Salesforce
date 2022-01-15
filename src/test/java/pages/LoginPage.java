@@ -7,8 +7,9 @@ import org.openqa.selenium.interactions.Actions;
 
 import javax.swing.*;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
+import static org.testng.Assert.assertTrue;
+@Log4j2
 public class LoginPage extends BasePage {
 
     public static final By USERNAME_INPUT = By.id("username");
@@ -24,13 +25,13 @@ public class LoginPage extends BasePage {
         return isExist(LOGIN_BUTTON);
     }
 
-    @Log4j2
+
     public LoginPage open() {
         driver.get(BASE_URL);
         log.info("Открытие страцицы");
         return this;
     }
-    @Log4j2
+
     public HomePage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Ввод имя пользователя");

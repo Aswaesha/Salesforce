@@ -1,8 +1,9 @@
 package elements;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+@Log4j2
 public class DropDown {
     WebDriver driver;
     String label;
@@ -16,9 +17,9 @@ public class DropDown {
     }
 
     public void selectOption(String option) {
-        System.out.printf("Writing text '%s' dropdown with label '%s'\n", option, this.label);
-        System.out.printf(String.format(dropdownLocator, this.label) + "\n");
-        System.out.printf(String.format(dropdownLocator, option) + "\n");
+        log.info("Writing text '%s' dropdown with label '%s'\n", option, this.label);
+        log.info(String.format(dropdownLocator, this.label) + "\n");
+        log.info(String.format(dropdownLocator, option) + "\n");
         driver.findElement(By.xpath(String.format(dropdownLocator, this.label))).click();
         driver.findElement(By.xpath(String.format(optionLocator, option))).click();
     }

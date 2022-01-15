@@ -1,10 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
+@Log4j2
 public class AccountListPage extends BasePage {
     public static final By BREADFCRUMBS_LABEL = By.xpath("//nav[@aria-label='Breadcrumbs']//span");
 
