@@ -13,14 +13,14 @@ public class ContactsTest extends BaseTest {
     public void accountShouldBeCreated() {
         loginPage
                 .open()
-                .login("taeyeononni-hegd@force.com", "Q1w2e3r4t5y6u7");
+                .login("aleksa.bah-mpsm@force.com", "Q1w2e3r4t5y6u7");
         boolean isContactModalOpen = contactListPage
                 .open()
                 .clickNew()
                 .isPageOpen();
 
         assertTrue(isContactModalOpen, "Попап не открылся");
-        Contact contact = new Contact("Ms.", "Alex", "Ivina", "Aramark", "Project",
+        Contact contact = new Contact("Ms.", "Alex", "Ivina", "TestAccountName", "Project",
                 "122345", "+375441234567", "qwertyuiop@gmail.com", "Alex Alex", "str. Sovetskaya", "Minsk",
                 "123456", "Minskaya obl.", "Belarus", "str. Pobedy", "Moskow", "789456",
                 "Moskow obl.", "Russia", "(982)7456321", "789456", "987456",

@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 public class AccountDetailsPage extends BasePage {
 
     public static final By DETAILS_LINK = By.xpath("//a[@id='detailTab__item']");
@@ -40,5 +42,6 @@ public class AccountDetailsPage extends BasePage {
     @Override
     public boolean isPageOpen() {
         return isExist(DETAILS_LINK);
+        log.info("Сктаница аккаунта открыта  ");
     }
 }

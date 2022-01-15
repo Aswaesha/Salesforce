@@ -1,19 +1,23 @@
 package tests;
 
 
+import lombok.extern.log4j.Log4j2;
 import models.Account;
+import models.AccountFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
+@Log4j2
 public class AccountTest extends BaseTest {
 
     @Test(description= "New account")
     public void accountShouldBeCreated() {
+        log.info("Старт теста Account test");
         loginPage
                 .open()
-                .login("taeyeononni-hegd@force.com", "Q1w2e3r4t5y6u7");
+                .login("aleksa.bah-mpsm@force.com", "Q1w2e3r4t5y6u7");
 
         boolean isAccountModalOpen = accountListPage
                 .open()
@@ -21,11 +25,13 @@ public class AccountTest extends BaseTest {
                 .isPageOpen();
 
         assertTrue(isAccountModalOpen, "Попап не открылся");
-        Account account = new Account("TestAccountName", "www.onliner.by", "Investor", "+375447777777", "37544889977", "Aramark", "Apparel", "1,200", "$120,000", "Full time", "str Mazorova", "Gomel", "Gomel obl.", "246053", "Belarus");
+
+        Account account = AccountFactory.get();
+
         boolean isDetailsPageOpen = accountModalPage
                 .create(account)
                 .isPageOpen();
-        Assert.assertTrue(isDetailsPageOpen, "Страница Details не открылась.");
+        assertTrue(isDetailsPageOpen, "Страница Details не открылась.");
 
 
         Assert.assertEquals(accountDetailsPage.getFieldValueByName("Account Name"), account.getAccountName(), "Текст не соответствует Account Name");
@@ -40,6 +46,7 @@ public class AccountTest extends BaseTest {
         Assert.assertEquals(accountDetailsPage.getFieldValueByAdress("Billing Address"), account.getBillingStreet() + "\n" + account.getBillingCity() + ", " + account.getBillingState() + " " + account.getBillingZip() + "\n" + account.getBillingCountry(), "Адрес не соответствует");
         Assert.assertEquals(accountDetailsPage.getFieldValueByAdress("Shipping Address"), account.getBillingStreet() + "\n" + account.getBillingCity() + ", " + account.getBillingState() + " " + account.getBillingZip() + "\n" + account.getBillingCountry(), "Адрес доставки не соответствует");
 
+        log.info("Конец теста Account test");
 
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-    public static final String BASE_URL = "https://alexandrabukh.lightning.force.com";
+    public static final String BASE_URL = "https://alexandrabukh3.lightning.force.com";
     public static final By NEW_BUTTON = By.xpath("//a[@href='javascript:void(0);']/div[@title='New']");
     public static final By SAVE_BUTTON = By.xpath("//button[@title='Save']");
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 public class AccountModalPage extends BasePage {
 
     public static final By MODAL_TITLE = By.xpath("//*[contains(@class, 'inlineTitle')]");
@@ -22,6 +24,7 @@ public class AccountModalPage extends BasePage {
     @Override
     public boolean isPageOpen() {
         return isExist(MODAL_TITLE);
+        log.info("Модатьное окно открыто");
     }
 
     public AccountDetailsPage create(Account account) {
@@ -44,6 +47,7 @@ public class AccountModalPage extends BasePage {
 
         clickCheckbox();
         return clickSave();
+        log.info("Аккаунт создан и нажата кноска Save");
     }
 
     public AccountDetailsPage clickSave() {
