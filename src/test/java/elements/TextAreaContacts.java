@@ -1,8 +1,11 @@
 package elements;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.logging.Logger;
+@Log4j2
 public class TextAreaContacts {
     WebDriver driver;
     String label;
@@ -17,7 +20,7 @@ public class TextAreaContacts {
 
 
     public void write(String text) {
-        System.out.printf("Writing text '%s' TextArea with label '%s'\n", text, this.label);
+        log.info("Writing text '%s' TextArea with label '%s'\n", text, this.label);
         driver.findElement(By.xpath(String.format(textAreaLocator, this.label))).sendKeys(text);
     }
 }

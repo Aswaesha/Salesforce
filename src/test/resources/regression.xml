@@ -5,13 +5,13 @@
     <test name="test 1">
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.AccountTest"/>
+
         </classes>
     </test> <!-- Test -->
 
     <test name="test 2">
         <classes>
-            <class name="tests.ContactsTest"/>
+            <class name="tests.LoginTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>
